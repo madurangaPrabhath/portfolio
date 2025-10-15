@@ -121,7 +121,9 @@ export function Globe({ globeConfig, data }: any) {
         .showAtmosphere(defaultProps.showAtmosphere)
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor(() => defaultProps.polygonColor);
+        .hexPolygonColor(() => {
+          return defaultProps.polygonColor;
+        });
       startAnimation();
     }
   }, [globeData]);
@@ -137,11 +139,11 @@ export function Globe({ globeConfig, data }: any) {
       .arcEndLng((d: any) => (d as Position).endLng * 1)
       .arcColor((d: any) => (d as Position).color)
       .arcAltitude((d: any) => (d as Position).arcAlt)
-      .arcStroke((): number => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
+      .arcStroke(() => [0.32, 0.28, 0.3][Math.round(Math.random() * 2)])
       .arcDashLength(defaultProps.arcLength)
       .arcDashGap(15)
       .arcDashInitialGap((d: any) => (d as Position).order * 1)
-      .arcDashAnimateTime((): number => defaultProps.arcTime);
+      .arcDashAnimateTime(() => defaultProps.arcTime);
 
     globeRef.current
       .pointsData(globeData)
@@ -152,7 +154,9 @@ export function Globe({ globeConfig, data }: any) {
 
     globeRef.current
       .ringsData([])
-      .ringColor(() => (t: any) => `rgba(255,255,255,${1 - t})`)
+      .ringColor(() => {
+        return (t: any) => `rgba(255,255,255,${1 - t})`;
+      })
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
