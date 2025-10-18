@@ -72,6 +72,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
     | null
   >(null);
 
+  const [isGlobeReady, setIsGlobeReady] = useState(false);
+
   const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
@@ -96,7 +98,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current]);
+  }, [globeRef.current, data]);
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -107,18 +109,43 @@ export function Globe({ globeConfig, data }: WorldProps) {
       emissiveIntensity: number;
       shininess: number;
     };
-    globeMaterial.color = new Color(globeConfig.globeColor);
-    globeMaterial.emissive = new Color(globeConfig.emissive);
+    globeMaterial.color = new Color(
+      globeConfig.globeColor || defaultProps.globeColor
+    );
+    globeMaterial.emissive = new Color(
+      globeConfig.emissive || defaultProps.emissive
+    );
     globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
     globeMaterial.shininess = globeConfig.shininess || 0.9;
   };
 
   const _buildData = () => {
+    if (!data || data.length === 0) return;
+
     const arcs = data;
     let points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
+
+      // Validate arc data
+      if (
+        !arc.color ||
+        isNaN(arc.startLat) ||
+        isNaN(arc.startLng) ||
+        isNaN(arc.endLat) ||
+        isNaN(arc.endLng)
+      ) {
+        console.warn(`Invalid arc data at index ${i}`, arc);
+        continue;
+      }
+
       const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
+
+      if (!rgb) {
+        console.warn(`Invalid color for arc at index ${i}`, arc.color);
+        continue;
+      }
+
       points.push({
         size: defaultProps.pointSize,
         order: arc.order,
@@ -149,18 +176,23 @@ export function Globe({ globeConfig, data }: WorldProps) {
   };
 
   useEffect(() => {
-    if (globeRef.current && globeData) {
-      globeRef.current
-        .hexPolygonsData(countries.features)
-        .hexPolygonResolution(3)
-        .hexPolygonMargin(0.7)
-        .showAtmosphere(defaultProps.showAtmosphere)
-        .atmosphereColor(defaultProps.atmosphereColor)
-        .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor((e) => {
-          return defaultProps.polygonColor;
-        });
-      startAnimation();
+    if (globeRef.current && globeData && globeData.length > 0) {
+      try {
+        globeRef.current
+          .hexPolygonsData(countries.features)
+          .hexPolygonResolution(3)
+          .hexPolygonMargin(0.7)
+          .showAtmosphere(defaultProps.showAtmosphere)
+          .atmosphereColor(defaultProps.atmosphereColor)
+          .atmosphereAltitude(defaultProps.atmosphereAltitude)
+          .hexPolygonColor((e) => {
+            return defaultProps.polygonColor;
+          });
+        startAnimation();
+        setIsGlobeReady(true);
+      } catch (error) {
+        console.error("Error initializing globe:", error);
+      }
     }
   }, [globeData]);
 
