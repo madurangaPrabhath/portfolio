@@ -76,7 +76,7 @@ export const projects = [
     des: "A responsive e-commerce platform for roofing products using React.js & Spring Boot",
     img: "/p1.svg",
     iconLists: ["/re.svg", "/java.svg", "/springboot.svg", "/mysql.svg", "/git.svg"],
-    link: "",
+    link: "https://github.com/madurangaPrabhath/TopRoof-Solutions.git",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
     des: "A personal website to showcase projects, skills, and experience with a responsive design.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/git.svg"],
-    link: "",
+    link: "https://github.com/madurangaPrabhath/portfolio.git",
   },
   {
     id: 3,
@@ -92,7 +92,7 @@ export const projects = [
     des: "A real-time currency converter using live exchange rates, built with the MERN stack for fast and accurate conversions.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/mongodb.svg", "/ts.svg", "/tail.svg", "/node.svg"],
-    link: "",
+    link: "https://github.com/madurangaPrabhath/currency-converter-app.git",
   },
   {
     id: 4,
@@ -100,7 +100,7 @@ export const projects = [
     des: "A mobile app for university students to access profiles, courses, and subject marks, built with React Native for a smooth and intuitive user experience.",
     img: "/p4.svg",
     iconLists: ["/re.svg", "/vs.svg", "/ts.svg", "/js.svg", "/git.svg"],
-    link: "",
+    link: "https://github.com/madurangaPrabhath/ReactNative_StudentCare_MobileApp.git",
   },
 ];
 
