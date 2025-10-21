@@ -104,67 +104,54 @@ export const projects = [
   },
 ];
 
-export const testimonials = [
-  {
-    quote:
-      "Collaborating with us",
-    name: "Michael Johnson",
-    title: "Director of AA Technologies",
-  },
-  {
-    quote:
-      "Collaborating.",
-    name: "Adam Smith",
-    title: "Director of BB Technologies",
-  },
-  {
-    quote:
-      "Collaborating with us.",
-    name: "Michael",
-    title: "Director of CC Technologies",
-  },
-];
-
-export const companies = [
+export const skills = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "next",
+    img: "/next.svg",
+    nameImg: "/mongodb.svg",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "MongoDB",
+    img: "/mongodb.svg",
+    nameImg: "/mongodb.svg",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "react",
+    img: "/re.svg",
+    nameImg: "/appName.svg",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
+    name: "git",
+    img: "/git.svg",
     nameImg: "/streamName.svg",
   },
   {
     id: 5,
+    name: "tail",
+    img: "/tail.svg",
+    nameImg: "/hostName.svg",
+  },
+  {
+    id: 6,
+    name: "springboot",
+    img: "/springboot.svg",
+    nameImg: "/streamName.svg",
+  },
+  {
+    id: 7,
+    name: "three",
+    img: "/three.svg",
+    nameImg: "/streamName.svg",
+  },
+  {
+    id: 8,
     name: "docker.",
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
-  },
-];
-
-export const workExperience = [
-  {
-    id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
   },
 ];
 
