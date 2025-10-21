@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Approach from "@/components/Approach";
+import Footer from "@/components/Footer";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
 
@@ -15,7 +16,8 @@ export default function Home() {
         <Grid />
         <Projects />
         <Skills />
-        <Approach />       
+        <Approach />
+        <Footer />      
       </div>
     </main>
   );
