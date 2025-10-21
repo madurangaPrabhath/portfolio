@@ -109,49 +109,41 @@ export const skills = [
     id: 1,
     name: "next",
     img: "/next.svg",
-    nameImg: "/mongodb.svg",
   },
   {
     id: 2,
     name: "MongoDB",
     img: "/mongodb.svg",
-    nameImg: "/mongodb.svg",
   },
   {
     id: 3,
     name: "react",
     img: "/re.svg",
-    nameImg: "/appName.svg",
   },
   {
     id: 4,
     name: "git",
     img: "/git.svg",
-    nameImg: "/streamName.svg",
   },
   {
     id: 5,
     name: "tail",
     img: "/tail.svg",
-    nameImg: "/hostName.svg",
   },
   {
     id: 6,
     name: "springboot",
     img: "/springboot.svg",
-    nameImg: "/streamName.svg",
   },
   {
     id: 7,
     name: "three",
     img: "/three.svg",
-    nameImg: "/streamName.svg",
   },
   {
     id: 8,
     name: "docker.",
     img: "/dock.svg",
-    nameImg: "/dockerName.svg",
   },
 ];
 
