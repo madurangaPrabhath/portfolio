@@ -155,12 +155,12 @@ export const socialMedia = [
   },
   {
     id: 2,
-    img: "/twit.svg",
-    link: "https://twitter.com/",
+    img: "/facebook.svg",
+    link: "https://www.facebook.com/share/17Ps7H9cYn/",
   },
   {
     id: 3,
     img: "/link.svg",
-    link: "https://linkedin.com/in/madurangaPrabhath",
+    link: "https://www.linkedin.com/in/maduranga-prabhath?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
 ];
