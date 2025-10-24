@@ -10,13 +10,6 @@ const Footer = () => {
   const handleEmailClick = () => {
     const email = "mprabhath1999@gmail.com";
     window.location.href = `mailto:${email}`;
-
-    setTimeout(() => {
-      window.open(
-        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
-        "_blank"
-      );
-    }, 500);
   };
 
   return (
