@@ -66,9 +66,9 @@ const Projects = () => {
                       <Image
                         src={icon}
                         alt="icon5"
-                        className="p-2"
-                        width={20}
-                        height={20}
+                        className="p-1"
+                        width={26}
+                        height={26}
                       />
                     </div>
                   ))}

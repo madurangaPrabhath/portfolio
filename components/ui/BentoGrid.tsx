@@ -162,7 +162,7 @@ export const BentoGridItem = ({
                 {copied && (
                   <Lottie
                     animationData={animationData}
-                    loop={true}
+                    loop={false}
                     style={{ width: 400, height: 200 }}
                   />
                 )}
