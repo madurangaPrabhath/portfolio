@@ -5,7 +5,7 @@ import Image from "next/image";
 import { IoCopyOutline } from "react-icons/io5";
 import dynamic from "next/dynamic";
 
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 import { cn } from "@/lib/utils";
 
@@ -58,15 +58,6 @@ export const BentoGridItem = ({
   const rightLists = ["MongoDB", "NextJS", "Node"];
 
   const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
 
   const handleCopy = () => {
     const text = "mprabhath1999@gmail.com";
@@ -168,7 +159,13 @@ export const BentoGridItem = ({
                   copied ? "block" : "block"
                 }`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
+                {copied && (
+                  <Lottie
+                    animationData={animationData}
+                    loop={true}
+                    style={{ width: 400, height: 200 }}
+                  />
+                )}
               </div>
 
               <MagicButton
