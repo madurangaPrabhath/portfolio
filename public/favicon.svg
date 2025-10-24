@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0a2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="#0a0a0a"/>
+  
+  <!-- Laptop Screen -->
+  <rect x="25" y="30" width="50" height="32" rx="2" fill="url(#grad)" stroke="#6366f1" stroke-width="1.5"/>
+  <rect x="28" y="33" width="44" height="26" fill="url(#screen)"/>
+  
+  <!-- Code on Screen -->
+  <text x="32" y="42" font-family="monospace" font-size="4" fill="#8b5cf6">&lt;/&gt;</text>
+  <line x1="32" y1="46" x2="48" y2="46" stroke="#6366f1" stroke-width="1"/>
+  <line x1="32" y1="50" x2="58" y2="50" stroke="#8b5cf6" stroke-width="1"/>
+  <line x1="32" y1="54" x2="42" y2="54" stroke="#6366f1" stroke-width="1"/>
+  
+  <!-- Laptop Base/Keyboard -->
+  <path d="M 20 62 L 28 62 L 28 68 L 72 68 L 72 62 L 80 62 L 85 72 L 15 72 Z" fill="url(#grad)"/>
+  <rect x="30" y="63" width="40" height="4" rx="1" fill="#1e1b4b" opacity="0.5"/>
+  
+  <!-- Keyboard Details -->
+  <rect x="32" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="37" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="42" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="47" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="52" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="57" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+  <rect x="62" y="64" width="3" height="2" rx="0.5" fill="#6366f1" opacity="0.3"/>
+</svg>

@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Maduranga | Web Developer & QA Engineer",
   description: "Modern Portfolio Website",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
