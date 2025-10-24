@@ -8,10 +8,15 @@ import MagicButton from "./ui/MagicButton";
 
 const Footer = () => {
   const handleEmailClick = () => {
-    window.open(
-      "https://mail.google.com/mail/?view=cm&fs=1&to=mprabhath1999@gmail.com",
-      "_blank"
-    );
+    const email = "mprabhath1999@gmail.com";
+    window.location.href = `mailto:${email}`;
+
+    setTimeout(() => {
+      window.open(
+        `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`,
+        "_blank"
+      );
+    }, 500);
   };
 
   return (
