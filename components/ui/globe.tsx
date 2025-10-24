@@ -7,7 +7,7 @@ import { OrbitControls } from "@react-three/drei";
 import countries from "@/data/globe.json";
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    threeGlobe: any;
+    threeGlobe: object;
   }
 }
 
@@ -72,8 +72,6 @@ export function Globe({ globeConfig, data }: WorldProps) {
     | null
   >(null);
 
-  const [isGlobeReady, setIsGlobeReady] = useState(false);
-
   const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
@@ -98,7 +96,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current, data]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -123,7 +122,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     if (!data || data.length === 0) return;
 
     const arcs = data;
-    let points = [];
+    const points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
 
@@ -197,15 +196,15 @@ export function Globe({ globeConfig, data }: WorldProps) {
           .showAtmosphere(defaultProps.showAtmosphere)
           .atmosphereColor(defaultProps.atmosphereColor)
           .atmosphereAltitude(defaultProps.atmosphereAltitude)
-          .hexPolygonColor((e) => {
+          .hexPolygonColor(() => {
             return defaultProps.polygonColor;
           });
         startAnimation();
-        setIsGlobeReady(true);
       } catch (error) {
         console.error("Error initializing globe:", error);
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [globeData]);
 
   const startAnimation = () => {
@@ -231,21 +230,19 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .arcsData(validArcs)
-      .arcStartLat((d) => (d as { startLat: number }).startLat)
-      .arcStartLng((d) => (d as { startLng: number }).startLng)
-      .arcEndLat((d) => (d as { endLat: number }).endLat)
-      .arcEndLng((d) => (d as { endLng: number }).endLng)
-      .arcColor((e: any) => (e as { color: string }).color)
-      .arcAltitude((e) => {
-        return (e as { arcAlt: number }).arcAlt;
-      })
-      .arcStroke((e) => {
+      .arcStartLat((d) => (d as Position).startLat)
+      .arcStartLng((d) => (d as Position).startLng)
+      .arcEndLat((d) => (d as Position).endLat)
+      .arcEndLng((d) => (d as Position).endLng)
+      .arcColor(() => "#3b82f6")
+      .arcAltitude((d) => (d as Position).arcAlt)
+      .arcStroke(() => {
         return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
       })
       .arcDashLength(defaultProps.arcLength)
-      .arcDashInitialGap((e) => (e as { order: number }).order)
+      .arcDashInitialGap((d) => (d as Position).order)
       .arcDashGap(15)
-      .arcDashAnimateTime((e) => defaultProps.arcTime);
+      .arcDashAnimateTime(() => defaultProps.arcTime);
 
     globeRef.current
       .pointsData(globeData)
@@ -256,7 +253,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .ringsData([])
-      .ringColor((e: any) => (t: any) => e.color(t))
+      .ringColor(() => () => "rgba(255, 255, 255, 0.5)")
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
@@ -286,7 +283,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     return () => {
       clearInterval(interval);
     };
-  }, [globeRef.current, globeData]);
+  }, [globeData]);
 
   return (
     <>
@@ -302,7 +299,7 @@ export function WebGLRendererConfig() {
     gl.setPixelRatio(window.devicePixelRatio);
     gl.setSize(size.width, size.height);
     gl.setClearColor(0xffaaff, 0);
-  }, []);
+  }, [gl, size.width, size.height]);
 
   return null;
 }
@@ -344,12 +341,12 @@ export function World(props: WorldProps) {
 }
 
 export function hexToRgb(hex: string) {
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),
