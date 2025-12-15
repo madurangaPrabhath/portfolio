@@ -92,7 +92,7 @@ export const projects = [
     des: "A real-time currency converter using live exchange rates, built with the MERN stack for fast and accurate conversions.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/mongodb.svg", "/ts.svg", "/tail.svg", "/node.svg"],
-    link: "https://github.com/madurangaPrabhath/currency-converter-app.git",
+    link: "https://all-currency-converter-application.vercel.app/",
   },
   {
     id: 4,
