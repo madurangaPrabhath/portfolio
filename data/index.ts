@@ -95,13 +95,14 @@ export const projects = [
     link: "https://all-currency-converter-application.vercel.app/",
   },
   {
-    id: 4,
-    title: "StudentCare Mobile App",
-    des: "A mobile app for university students to access profiles, courses, and subject marks, built with React Native for a smooth and intuitive user experience.",
-    img: "/p4.svg",
-    iconLists: ["/re.svg", "/vs.svg", "/ts.svg", "/js.svg", "/git.svg"],
-    link: "https://github.com/madurangaPrabhath/ReactNative_StudentCare_MobileApp.git",
-  },
+  id: 4,
+  title: "FitLife - Fitness App",
+  des: "A Flutter + Firebase fitness app for workout planning, logging, and progress tracking. Features Email/Password & Google sign-in, exercise timers with set/reps flow, Firestore-backed progress stats, and light/dark theming.",
+  img: "/p4.svg",
+  iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg", "/provider.svg", "/git.svg"],
+  link: "https://github.com/madurangaPrabhath/fitness_app.git",
+},
+
 ];
 
 export const skills = [
