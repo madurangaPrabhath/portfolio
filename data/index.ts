@@ -95,13 +95,13 @@ export const projects = [
     link: "https://all-currency-converter-application.vercel.app/",
   },
   {
-  id: 4,
-  title: "FitLife - Fitness App",
-  des: "A Flutter + Firebase fitness app for workout planning, logging, and progress tracking. Features Email/Password & Google sign-in, exercise timers with set/reps flow, Firestore-backed progress stats, and light/dark theming.",
-  img: "/p4.svg",
-  iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg", "/provider.svg", "/git.svg"],
-  link: "https://github.com/madurangaPrabhath/fitness_app.git",
-},
+    id: 4,
+    title: "FitLife - Fitness App",
+    des: "A Flutter + Firebase fitness app for workout planning, logging, and progress tracking. Features Email/Password & Google sign-in, exercise timers with set/reps flow, Firestore-backed progress stats, and light/dark theming.",
+    img: "/p4.png",
+    iconLists: ["/flutter.svg", "/dart.svg", "/firebase.svg", "/provider.svg", "/git.svg"],
+    link: "https://github.com/madurangaPrabhath/fitness_app.git",
+  },
 
 ];
 
