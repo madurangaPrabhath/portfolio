@@ -106,6 +106,7 @@ portfolio/
 │   │   ├── GridGlobe.tsx
 │   │   └── MagicButton.tsx
 │   ├── Approach.tsx      # Approach section
+│   ├── ContactForm.tsx   # Validated contact form with mailto integration
 │   ├── Footer.tsx        # Footer component
 │   ├── Grid.tsx          # Grid layout
 │   ├── Hero.tsx          # Hero section
@@ -159,6 +160,7 @@ portfolio/
 
 ### 6. Footer
 
+- Contact form with validation and an animated success state (opens email client via `mailto:`)
 - Social media links (GitHub, Twitter, LinkedIn)
 - Gmail integration for direct contact
 - Copyright information
