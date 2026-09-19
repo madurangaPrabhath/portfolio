@@ -16,6 +16,7 @@ A modern, responsive portfolio website built with Next.js 15, React 19, and Tail
 - **🎭 Smooth Animations**: Framer Motion powered animations throughout
 - **🎯 Interactive Components**: Engaging hover effects and transitions
 - **📧 Contact Integration**: Easy-to-use contact button with Gmail integration
+- **📝 Contact Form**: Validated contact form (name, email, message) with inline errors, a sending spinner, and an animated success state — wired to `mailto:`
 - **🔗 Social Media Links**: Connected to GitHub, Twitter, and LinkedIn
 - **🚀 Project Showcase**: Featured projects with live links and tech stacks
 

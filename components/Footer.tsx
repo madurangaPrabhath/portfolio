@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { socialMedia } from "@/data";
 import MagicButton from "./ui/MagicButton";
+import ContactForm from "./ContactForm";
 
 const Footer = () => {
   const handleEmailClick = () => {
@@ -23,6 +24,9 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
+        <div className="w-full mt-4 md:mt-6">
+          <ContactForm />
+        </div>
         <MagicButton
           title="Connect with Me"
           icon={<FaLocationArrow />}
